@@ -13,7 +13,7 @@ export default function Pelicula(props) {
         <p className="describe">{props.descripcion}</p>
         <p className="run-time">
           {" "}
-          Run Time: {props.duracion}.<span>MMPA: {props.calificacion}.</span>{" "}
+          Run Time: {props.duracion}.<span>MMPA: {props.clasificacion}.</span>{" "}
           <span>Release: {props.fecha}.</span>
         </p>
         <p>
