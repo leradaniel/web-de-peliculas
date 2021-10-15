@@ -10,7 +10,7 @@ export default function Pelicula(props) {
           <i className="ion-android-star"></i>
           <span>{props.puntaje}</span> /10
         </p>
-        <p className="describe">{props.children}</p>
+        <p className="describe">{props.descripcion}</p>
         <p className="run-time">
           {" "}
           Run Time: {props.duracion}.<span>MMPA: {props.calificacion}.</span>{" "}
