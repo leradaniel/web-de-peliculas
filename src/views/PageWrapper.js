@@ -185,62 +185,15 @@ export default function PageWrapper(props) {
                 <li className="hidden">
                   <a href="#page-top"></a>
                 </li>
-                <li className="dropdown first">
-                  <a
-                    className="btn btn-default dropdown-toggle lv1"
-                    data-toggle="dropdown"
-                  >
-                    Home <i className="fa fa-angle-down" aria-hidden="true"></i>
+                <li>
+                  <a href="/" className="btn btn-default lv1">
+                    Home
                   </a>
-                  <ul className="dropdown-menu level1">
-                    <li>
-                      <a href="index-2.html">Home 01</a>
-                    </li>
-                    <li>
-                      <a href="homev2.html">Home 02</a>
-                    </li>
-                    <li>
-                      <a href="homev3.html">Home 03</a>
-                    </li>
-                  </ul>
                 </li>
-                <li className="dropdown first">
-                  <a
-                    className="btn btn-default dropdown-toggle lv1"
-                    data-toggle="dropdown"
-                    data-hover="dropdown"
-                  >
-                    movies
-                    <i className="fa fa-angle-down" aria-hidden="true"></i>
+                <li>
+                  <a href="/blog" className="btn btn-default lv1">
+                    Blog
                   </a>
-                  <ul className="dropdown-menu level1">
-                    <li className="dropdown">
-                      <a
-                        href="#"
-                        className="dropdown-toggle"
-                        data-toggle="dropdown"
-                      >
-                        Movie grid<i className="ion-ios-arrow-forward"></i>
-                      </a>
-                      <ul className="dropdown-menu level2">
-                        <li>
-                          <a href="moviegrid.html">Movie grid</a>
-                        </li>
-                        <li>
-                          <a href="moviegridfw.html">movie grid full width</a>
-                        </li>
-                      </ul>
-                    </li>
-                    <li>
-                      <a href="movielist.html">Movie list</a>
-                    </li>
-                    <li>
-                      <a href="moviesingle.html">Movie single</a>
-                    </li>
-                    <li className="it-last">
-                      <a href="seriessingle.html">Series single</a>
-                    </li>
-                  </ul>
                 </li>
                 <li className="dropdown first">
                   <a
@@ -408,8 +361,6 @@ export default function PageWrapper(props) {
               </div>
 
               {props.children}
-
-              
             </div>
             <div className="col-md-4 col-sm-12 col-xs-12">
               <div className="sidebar">
