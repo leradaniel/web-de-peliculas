@@ -2,15 +2,28 @@ import "./App.css";
 import Pelicula from "./Pelicula";
 import PageWrapper from "./PageWrapper";
 import Paginacion from "./Paginacion";
-import PeliculasJson from "./peliculas.json";
 import { useState } from "react";
 
 function App() {
   const [paginaActual, setPaginaActual] = useState(1);
+  const [peliculas, setPeliculas] = useState([]);
   const CANTIDAD_POR_PAGINA = 6;
 
-  let peliculas = PeliculasJson;
-
+  //Función asincrónica para consumir el archivo JSON
+  const buscarPeliculas = async () => {
+    let url = "https://api.jsonbin.io/b/618017739548541c29cbb4cf";
+    //Await del fetch para esperar un resultado
+    let respuesta = await fetch(url, {
+      method: "GET",
+      headers: {
+        Accept: "application/json",
+        "Content-Type": "application/json",
+      },
+    });
+    let json = await respuesta.json();
+    setPeliculas(json);
+  };
+  
   const cargarPeliculas = () => {
     peliculas = peliculas.slice(
       (paginaActual - 1) * CANTIDAD_POR_PAGINA,
@@ -19,14 +32,15 @@ function App() {
   };
 
   const getTotalPaginas = () => {
-    return Math.ceil(PeliculasJson.length / CANTIDAD_POR_PAGINA);
-    //return peliculas.length / CANTIDAD_POR_PAGINA;
+    return Math.ceil(peliculas.length / CANTIDAD_POR_PAGINA);
   };
 
-  cargarPeliculas();
+  //cargarPeliculas();
+  
 
   return (
     <PageWrapper>
+      <button onClick={buscarPeliculas}>Prueba</button>
       <Paginacion
         pagina={paginaActual}
         total={getTotalPaginas()}
